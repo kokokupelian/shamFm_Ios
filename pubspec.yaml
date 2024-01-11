@@ -10,10 +10,7 @@ dependencies:
   flutter:
     sdk: flutter
   audio_service: ^0.18.12
-  flutter_neumorphic:   
-    git:
-      url: https://github.com/Idean/Flutter-Neumorphic.git
-      ref: 07f44e0
+
   http: ^1.1.0
   just_audio: ^0.9.36
   provider: ^6.1.1
@@ -22,6 +19,10 @@ dependencies:
   url_launcher: ^6.1.14
   google_fonts: ^6.1.0
   flutter_launcher_icons: ^0.13.1
+  flutter_neumorphic:  
+    git:
+      url: https://github.com/Idean/Flutter-Neumorphic.git
+      ref: 07f44e0
 
 dev_dependencies:
   flutter_test:
