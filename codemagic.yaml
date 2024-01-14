@@ -1,0 +1,26 @@
+workflows:
+    sample-workflow:
+        name: Codemagic Sample Workflow
+        max_build_duration: 120
+        instance_type: mac_mini_m1
+        
+  scripts:
+    - name: Build the .app
+      script: | 
+        # build using workspace
+        xcodebuild build \
+          -workspace "MyXcodeWorkspace.xcworkspace" \
+          -scheme "MyScheme" \
+          CODE_SIGN_IDENTITY="" \
+          CODE_SIGNING_REQUIRED=NO \
+          CODE_SIGNING_ALLOWED=NO
+        #
+        # build using project
+        # xcodebuild build \
+        #    -project ""MyXcodeProject.xcodeproj" \
+        #    -scheme "MyScheme" \
+        #    CODE_SIGN_IDENTITY="" \
+        #    CODE_SIGNING_REQUIRED=NO \
+        #    CODE_SIGNING_ALLOWED=NO
+  artifacts:
+    - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.app
